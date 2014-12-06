@@ -109,6 +109,9 @@ function Pokemon(species,name) {
 	this.speedspecialiv=0;
 	this.stats = {hp:1,attack:1,defense:1,speed:1,special:1};
 }
+Pokemon.prototype.toString = function() {
+	return this.name+", level "+this.level;
+}
 Pokemon.prototype.serialize = function(address) {
 	gameboy.memory[address] = this.species;
 	write16bit(this.hp,address+1);
@@ -191,5 +194,18 @@ function writePlayerPokemon() {
 		gameboy.memory[0xD164+i] = player.pokemon[i].species;
 		setVarLenText(0xD2B5+11*i,10,player.pokemon[i].name);
 		player.pokemon[i].serialize(0xD16B+44*i);
+	}
+}
+
+function inBattle() {
+	return gameboy.memory[0xD057] !== 0;
+}
+
+var opponent = {pokemon:[]};
+function readOpponentPokemon() {
+	opponent.pokemon = [];
+	for (var i=0; i<gameboy.memory[0xD89C]; i++) {
+		player.pokemon[i]=new Pokemon(gameboy.memory[0xD89D+i],translateVarLenText(0xD9EE+11*i,10));
+		player.pokemon[i].deserialize(0xD8A4+44*i);
 	}
 }
