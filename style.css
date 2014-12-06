@@ -34,6 +34,12 @@ body {
 	overflow:auto;
 	padding:1em;
 	box-sizing:border-box;
+	font-family:Inconsolata;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
 }
 #prompt {
 	background-color:#EFFFDE; line-height:2em; width:1em; float:left;
