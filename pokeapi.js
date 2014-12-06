@@ -69,4 +69,13 @@ Object.defineProperty(player,"money", {
 			gameboy.memory[0xD347+i] = ((digits/10) << 4) + (digits % 10);
 		}
 	}
+});
+Object.defineProperty(player,"idNumber", {
+	get: function() {
+		return gameboy.memory[0xD359]*256 + gameboy.memory[0xD35A];
+	},
+	set: function(v) {
+		gameboy.memory[0xD35A] = v & 0xFF;
+		gameboy.memory[0xD359] = v >> 8;
+	}
 })
