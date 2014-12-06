@@ -212,6 +212,6 @@ function readOpponentPokemon() {
 	}
 	if (opponent.pokemon.length > 0) {
 		opponent.pokemon[0].hp = read16bit(0xCFF4);
-		opponent.pokemon[0].status = gameboy.memory[CFE9];
+		opponent.pokemon[0].status = gameboy.memory[0xCFE9];
 	}
 }
