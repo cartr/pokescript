@@ -34,7 +34,7 @@
 		
 		
 		<div id="console">
-			<div id="history">Welcome to Pok&eacute;Script!<br><br>Pok&eacute;Script lets you play Pok&eacute;mon Red using the power of programming!  To get started, click on the &gt; down at the bottom, type in a command (like tapButton("a") to skip past the intro or tapButton("start") to start the game), and click Execute.<br><br></div>
+			<div id="history">Welcome to Pok&eacute;Script!<br><br>Pok&eacute;Script lets you play Pok&eacute;mon Red using the power of programming!  To get started, click on the &gt; down at the bottom, type in a command (tapButton("start") to skip past the intro or start the game), and click Execute.<br><br></div>
 			<!-- TODO: Some sort of sandboxing? -->
 			<label for="command" id="prompt">&gt;</label><div onclick="executeCommand()" id="execute">Execute!</div><input id="command" onkeydown="if (event.keyCode == 13) executeCommand()">
 		</div>
