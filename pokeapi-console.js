@@ -21,7 +21,7 @@ function executeCommand() {
 	try {
 		var result = eval(cmd);
 		if (result !== undefined) {
-			if (typeof result !=== "function")
+			if (typeof result !== "function")
 				log(result);
 			else
 				log("If you're trying to call a function, remember that you need to use the () parentheses.");
