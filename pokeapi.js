@@ -39,8 +39,34 @@ function tapButton(key,done) {
 
 function textOnScreen() { return (translateText(50361,18).trim()+"\n"+translateText(50401,18).trim()).trim(); }
 
-var player = {}
+function Player() {}
+var player = new Player();
 Object.defineProperty(player,"name", {
 	get: function() { return translateVarLenText(0xD158,7)},
 	set: function(name) { setVarLenText(0xD158,7,name) }
+});
+Object.defineProperty(player,"x", {
+	get: function() { return gameboy.memory[0xD362]}
+});
+Object.defineProperty(player,"y", {
+	get: function() { return gameboy.memory[0xD361]}
+});
+Object.defineProperty(player,"mapNum", {
+	get: function() { return gameboy.memory[0xD35E]}
+});
+Object.defineProperty(player,"money", {
+	get: function() {
+		var total = 0;
+		for (var i=0xD347; i<=0xD349; i++) {
+			total *= 100;
+			total +=((gameboy.memory[i] >> 4) & 15)*10 + (gameboy.memory[i] & 15);
+		}
+		return total
+	},
+	set: function(v) {
+		for (var i=0; i<3; i++) {
+			var digits = (v/Math.pow(100,2-i)) % 100;
+			gameboy.memory[0xD347+i] = ((digits/10) << 4) + (digits % 10);
+		}
+	}
 })
