@@ -30,13 +30,13 @@ function executeCommand() {
 				"that are usually a lot harder to track down and fix than error messages.)")
 		}
 	}
-	if (tutorialEnabled && !hasPressedStart && keyQueue.length > 0 && keyQueue[0][0] == "start") {
+	if (tutorialEnabled && !hasPressedStart && keyQueue.length > 0 && keyQueue[0][1] == "start") {
 		hasPressedStart = true;
 		log("\nCongratulations! You are now a programmer!  Start isn't the only button you can tap, by the way.  You can do things like "+
 			"tapButton('select') and tapButton('left') if you want, too.");
 		log("\nGo ahead and tapButton('a') to start a new game once you're on the menu screen.");
 		var oakTimer = setInterval(function() {
-			if (textOnScreen().length > 0) {
+			if (textOnScreen().indexOf("Hello") > -1) {
 				clearInterval(oakTimer);
 				document.getElementById("command").value = "for (var i=0; i<200; i++) tapButton('a');";
 				document.getElementById("command").disabled = true;
@@ -45,7 +45,7 @@ function executeCommand() {
 				log("\nI've typed in a little command that does exactly that.  Basically, I told the computer to count to 200 and press the A button "+
 					"every time it counts a new number.  In other words, the computer is going to press the A button 200 times.")
 			}
-		},500)
+		},100)
 	}
 	document.getElementById('history').scrollTop = document.getElementById('history').scrollHeight;
 }
