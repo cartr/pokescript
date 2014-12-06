@@ -2,6 +2,7 @@ var tutorialEnabled = true;
 var hasSeenError = false;
 var hasPressedStart = false;
 var hasSeenLoop = false;
+var hasChangedName = false;
 
 function log(s) {
 	document.getElementById('history').innerHTML += s+"\n";
@@ -14,7 +15,7 @@ function executeCommand() {
 	try {
 		var result = eval(cmd);
 		if (result !== undefined) {
-			if (typeof result == "number") {
+			if (typeof result == "number" || typeof result == "boolean") {
 				log(result);
 			} else {
 				log(repr(result));
@@ -47,7 +48,7 @@ function executeCommand() {
 			}
 		},100)
 	}
-	if (tutorialEnabled && !hasSeenLoop && document.getElementById("command").disabled) {
+	else if (tutorialEnabled && !hasSeenLoop && document.getElementById("command").disabled) {
 		log("Take THAT, Professor Oak!\n");
 		log("While we wait for him to finish talking, I want to explain exactly how that piece of code I showed you works.  The first word, 'for', tells JavaScript"+
 			" to run a for-loop.  A for-loop is one of the easiest ways to do something over and over again.  The next bit of the for loop, 'var i=0', is called the "+
@@ -61,6 +62,20 @@ function executeCommand() {
 		"to change your name to something else!");
 		hasSeenLoop = true;
 		document.getElementById("command").disabled = false;
+	} else if (tutorialEnabled && !hasChangedName && player.name != "AAAAAAA") {
+		log("Great Job!\n");
+		if (player.name == "CARTER") {
+			log("(By the way, your name doesn't have to be CARTER.  You can type player.name='SUSAN'; or player.name='THEBEST'; if you want)\n");
+		}
+		log("Your next task is a formidable challenge: escape your house.  You'll need to use commands like tapButton('up') to move your character around.\n")
+		log("Tip: You don't need to type tapButton('right') eleventy billion times to get your character to walk.  Use loops!\n")
+		hasChangedName = true;
+		var escapeHouseTimer = setInterval(function() {
+			if (player.mapNumber == 0) {
+				clearInterval(escapeHouseTimer);
+				log("Congratulations!  You escaped your house!");
+			}
+		},100)
 	}
 	document.getElementById('history').scrollTop = document.getElementById('history').scrollHeight;
 }
