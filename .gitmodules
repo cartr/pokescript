@@ -1,0 +1,3 @@
+[submodule "pokered"]
+	path = pokered
+	url = https://github.com/iimarckus/pokered
