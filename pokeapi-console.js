@@ -50,7 +50,7 @@ function executeCommand() {
 	if (tutorialEnabled && !hasSeenLoop && document.getElementById("command").disabled) {
 		log("Take THAT, Professor Oak!\n");
 		log("While we wait for him to finish talking, I want to explain exactly how that piece of code I showed you works.  The first word, 'for', tells JavaScript"+
-			+" to run a for-loop.  A for-loop is one of the easiest ways to do something over and over again.  The next bit of the for loop, 'var i=0', is called the "+
+			" to run a for-loop.  A for-loop is one of the easiest ways to do something over and over again.  The next bit of the for loop, 'var i=0', is called the "+
 			"initialization.  The initialization tells JavaScript how to get ready for the loop.  In this case, I've told it to create a VARiable (in other words, I've "+
 			"asked it to remember a number), and set that variable to 0.\n")
 		log("The next bit of the loop is called the condition.  The condition is what tells JavaScript how long to keep doing the loop.  'i<200' means 'if the number is less "
