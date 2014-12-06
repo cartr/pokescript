@@ -57,7 +57,8 @@ function executeCommand() {
 		+"than 200, keep going'.  Then, the 'i = i + 1' (the afterthought) tells it to count the next number each time.  So (var i=0; i<200; i++) means 'count to 200'.\n");
 		log('Finally, the "tapButton(\'a\')" is the thing that the computer does each time through the loop.  The computer counts to 200, and for each number it counts, it presses A!\n');
 		log("Let's take a look at how the A-presser is going... Well, maybe it wasn't the best idea to have the computer press A over and over.  I think it set our name to AAAAAAA! "+
-		"Normally in Pokemon games you aren't allowed to change your name after the game starts.  Thankfully, we're programmers, so we don't need to play by the rules!");
+		"Normally in Pokemon games you aren't allowed to change your name after the game starts.  Thankfully, we're programmers, so we don't need to play by the rules!  Type player.name='CARTER'; "+
+		"to change your name to something else!");
 		hasSeenLoop = true;
 		document.getElementById("command").disabled = false;
 	}
