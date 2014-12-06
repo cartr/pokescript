@@ -1,3 +1,6 @@
 [submodule "pokered"]
 	path = pokered
 	url = https://github.com/iimarckus/pokered
+[submodule "rom-build/rgbds"]
+	path = rom-build/rgbds
+	url = https://github.com/bentley/rgbds
