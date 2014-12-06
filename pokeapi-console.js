@@ -75,12 +75,27 @@ function executeCommand() {
 				var getPokemonTimer = setInterval(function() {
 					if (player.pokemon.length > 0) {
 						clearInterval(getPokemonTimer);
-						log("Now that you've got a Pokemon, you can find out more about it!  Try typing player.pokemon[0] (Computers normally count things starting from 0.) "+
+						log("Now that you've got a Pokemon, you can use your programmer skills to find out more about it!  Try typing player.pokemon[0] (Computers normally count things starting from 0.) "+
 							"If you want more details, you can do things like player.pokemon[0].hp or player.pokemon[0].stats.attack to see exactly what the numbers are.");
 						var firstBattleTimer = setInterval(function() {
 							if (inBattle()) {
 								clearInterval(firstBattleTimer);
-								log("By the way, magical JavaScript Pokemon analysis works on your opponent's Pokemon, too!  Try opponent.pokemon[0].hp");
+								log("By the way, magical JavaScript Pokemon analysis works on your opponent's Pokemon, too!  Try opponent.pokemon[0].hp !");
+								var endOfBattleTimer = setInterval(function() {
+									if (!inBattle()) {
+										clearInterval(endOfBattleTimer);
+										log("If we're going to keep walking around like this, we're going to need to define a few functions.  Functions are another "+
+										"way to save us time. (As you may have noticed, programmers don't really like typing things over and over.)  You can define a function "+
+										"like this: var walk = function(direction,distance) {for (var i=0; i<distance; i++) tapButton(direction)}\n");
+										log("The 'var walk =' part is just like the 'var i=' part we saw earlier; we're telling JavaScript to remember something. "+
+										"The word 'function' tells JavaScript that what we type next is a function, and the '(direction, distance)' bit tells JavaScript "+
+										"the parameters of the function.  Parameters are things we can give a function to change what it does. In this case, we want to be "+
+										"able to specify the direction to walk in and the distance to walk. Finally, the bit inside the { } (which are called curly brace, by the way) "+
+									 	"is called the body of the function.  The body is the code that runs when we run the function.\n");
+										log("The end result is that after you define the function with that code, you'll be able just to type walk('left',4); and JavaScript "+
+									    "will do all the work for you.");
+									}
+								},100)
 							}
 						},100)
 					}
