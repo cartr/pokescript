@@ -14,12 +14,12 @@ body {
 }
 #gameboy-column canvas {
 	width:320px; height:288px;
-	image-rendering: optimizeSpeed;
-	image-rendering: crisp-edges;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -o-crisp-edges;
-	image-rendering: -webkit-optimize-contrast;
-	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: optimizeSpeed !important;
+	image-rendering: crisp-edges !important;
+	image-rendering: -moz-crisp-edges !important;
+	image-rendering: -o-crisp-edges !important;
+	image-rendering: -webkit-optimize-contrast !important;
+	-ms-interpolation-mode: nearest-neighbor !important;
 }
 #gameboy-column h1 {
 	font-family:Lato;
