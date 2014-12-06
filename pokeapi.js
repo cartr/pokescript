@@ -210,6 +210,8 @@ function readOpponentPokemon() {
 		opponent.pokemon[i].toString = function() {return "Level "+this.level+", "+this.hp+"/"+this.stats.hp+" HP"};
 		opponent.pokemon[i].deserialize(0xD8A4+44*i);
 	}
-	opponent.pokemon[0].hp = read16bit(0xCFF4);
-	opponent.pokemon[0].status = gameboy.memory[CFE9];
+	if (opponent.pokemon.length > 0) {
+		opponent.pokemon[0].hp = read16bit(0xCFF4);
+		opponent.pokemon[0].status = gameboy.memory[CFE9];
+	}
 }
