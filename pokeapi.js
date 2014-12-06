@@ -205,7 +205,7 @@ var opponent = {pokemon:[]};
 function readOpponentPokemon() {
 	opponent.pokemon = [];
 	for (var i=0; i<gameboy.memory[0xD89C]; i++) {
-		player.pokemon[i]=new Pokemon(gameboy.memory[0xD89D+i],translateVarLenText(0xD9EE+11*i,10));
-		player.pokemon[i].deserialize(0xD8A4+44*i);
+		opponent.pokemon[i]=new Pokemon(gameboy.memory[0xD89D+i],translateVarLenText(0xD9EE+11*i,10));
+		opponent.pokemon[i].deserialize(0xD8A4+44*i);
 	}
 }

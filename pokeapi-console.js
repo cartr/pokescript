@@ -73,7 +73,7 @@ function executeCommand() {
 				clearInterval(escapeHouseTimer);
 				log("Congratulations!  You left your house!  Next, you can head north to acquire your first Pokemon and continue on your adventure!\n");
 				var getPokemonTimer = setInterval(function() {
-					if (len(player.pokemon) > 0) {
+					if (player.pokemon.length > 0) {
 						clearInterval(getPokemonTimer);
 						log("Now that you've got a Pokemon, you can find out more about it!  Try typing player.pokemon[0] (Computers normally count things starting from 0.) "+
 							"If you want more details, you can do things like player.pokemon[0].hp or player.pokemon[0].stats.attack to see exactly what the numbers are.");
