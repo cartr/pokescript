@@ -92,8 +92,9 @@ function Move(moveid) {
 	this.pp=0;
 }
 
-function Pokemon(species) {
+function Pokemon(species,name) {
 	this.species=species;
+	this.name=name;
 	this.hp=5;
 	this.level=1;
 	this.status=0;
@@ -153,7 +154,7 @@ Pokemon.prototype.deserialize = function(address) {
 	this.moves=[];
 	for (var i=0; i<4; i++) {
 		if (gameboy.memory[address+8+i] != 0)
-			moves[i]=new Move(gameboy.memory[address+8+i]);
+			this.moves[i]=new Move(gameboy.memory[address+8+i]);
 	}
 	this.trainerid = read16bit(address+12);
 	this.exp = gameboy.memory[address+14] << 14;
@@ -162,11 +163,11 @@ Pokemon.prototype.deserialize = function(address) {
 	this.EVs.attack = read16bit(address+19);
 	this.EVs.defense = read16bit(address+21);
 	this.EVs.speed = read16bit(address+23);
-	this.EVs.special = raed16bit(address+25);
+	this.EVs.special = read16bit(address+25);
 	this.atkdefiv = gameboy.memory[address+27];
 	this.speedspecialiv = gameboy.memory[address+28];
-	for (var i=0; i<moves.length; i++) {
-			moves[i].pp=gameboy.memory[address+29+i];
+	for (var i=0; i<this.moves.length; i++) {
+			this.moves[i].pp=gameboy.memory[address+29+i];
 	}
 	this.level=gameboy.memory[address+33];
 	this.stats.hp=read16bit(address+34);
@@ -178,7 +179,7 @@ Pokemon.prototype.deserialize = function(address) {
 function readPlayerPokemon() {
 	player.pokemon = [];
 	for (var i=0; i<gameboy.memory[0xD163]; i++) {
-		player.pokemon[i]=new Pokemon(gameboy.memory[0xD164+i]);
+		player.pokemon[i]=new Pokemon(gameboy.memory[0xD164+i],translateVarLenText(0xD2B5+11*i,10));
 		player.pokemon[i].deserialize(0xD16B+44*i);
 	}
 }
