@@ -12,6 +12,10 @@ function translateText(text,len) { result = ""; for (var i=text; i<text+len; i++
 User-callable commands for PokeAPI-js
 */
 function tapButton(key,done) {
+	var validButtons = ["start","select","a","b","up","down","left","right"];
+	if (validButtons.indexOf(key) === -1) {
+		throw new ReferenceError("invalid button name");
+	}
 	keyQueue.push([GameBoyKeyDown,key]);
 	keyQueue.push([function(key) {
 		GameBoyKeyUp(key); 
