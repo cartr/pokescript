@@ -16,11 +16,7 @@ function executeCommand() {
 	try {
 		var result = eval(cmd);
 		if (result !== undefined) {
-			if (typeof result == "number" || typeof result == "boolean") {
-				log(result);
-			} else {
-				log(repr(result));
-			}
+			log(result);
 		}
 	} catch (e) {
 		log(e);
