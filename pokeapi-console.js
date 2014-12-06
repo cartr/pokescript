@@ -14,10 +14,17 @@ function executeCommand() {
 	var cmd = document.getElementById('command').value;
 	document.getElementById('command').value = "";
 	log("&gt; "+cmd);
+	if (["left","right","b","a","select","start","up","down"].indexOf(cmd.toLowerCase().trim()) !== -1) {
+		log("To press "+cmd.toLowerCase().trim()+", type tapButton('+"+cmd.toLowerCase().trim()+"')");
+		return;
+	}
 	try {
 		var result = eval(cmd);
 		if (result !== undefined) {
-			log(result);
+			if (typeof result !=== "function")
+				log(result);
+			else
+				log("If you're trying to call a function, remember that you need to use the () parentheses.");
 		}
 	} catch (e) {
 		log(e);
