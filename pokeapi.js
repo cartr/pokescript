@@ -51,7 +51,7 @@ Object.defineProperty(player,"x", {
 Object.defineProperty(player,"y", {
 	get: function() { return gameboy.memory[0xD361]}
 });
-Object.defineProperty(player,"mapNum", {
+Object.defineProperty(player,"mapNumber", {
 	get: function() { return gameboy.memory[0xD35E]}
 });
 Object.defineProperty(player,"money", {
