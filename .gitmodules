@@ -7,3 +7,6 @@
 [submodule "GameBoy-Online"]
 	path = GameBoy-Online
 	url = https://github.com/grantgalitz/GameBoy-Online
+[submodule "libs/repr.js"]
+	path = libs/repr.js
+	url = https://github.com/gfxmonk/repr.js
