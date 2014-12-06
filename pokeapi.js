@@ -17,8 +17,9 @@ function setVarLenText(addr,maxlen,text){
 		addrToWrite++;
 		textIndex++;
 	}
-	if (addrToWrite < maxlen+addr) {
+	while (addrToWrite < maxlen+addr) {
 		gameboy.memory[addrToWrite] = 0x50;
+		addrToWrite++;
 	}
 }
 function write16bit(num,addr) {
@@ -181,5 +182,14 @@ function readPlayerPokemon() {
 	for (var i=0; i<gameboy.memory[0xD163]; i++) {
 		player.pokemon[i]=new Pokemon(gameboy.memory[0xD164+i],translateVarLenText(0xD2B5+11*i,10));
 		player.pokemon[i].deserialize(0xD16B+44*i);
+	}
+}
+function writePlayerPokemon() {
+	//TODO: hangs the game for some reason
+	gameboy.memory[0xD163] = player.pokemon.length;
+	for (var i=0; i<player.pokemon.length; i++) {
+		gameboy.memory[0xD164+i] = player.pokemon[i].species;
+		setVarLenText(0xD2B5+11*i,10,player.pokemon[i].name);
+		player.pokemon[i].serialize(0xD16B+44*i);
 	}
 }

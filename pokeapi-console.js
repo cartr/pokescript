@@ -9,6 +9,7 @@ function log(s) {
 }
 
 function executeCommand() {
+	readPlayerPokemon();
 	var cmd = document.getElementById('command').value;
 	document.getElementById('command').value = "";
 	log("&gt; "+cmd);
@@ -73,7 +74,7 @@ function executeCommand() {
 		var escapeHouseTimer = setInterval(function() {
 			if (player.mapNumber == 0) {
 				clearInterval(escapeHouseTimer);
-				log("Congratulations!  You escaped your house!");
+				log("Congratulations!  You left your house!  Next, you can head north to acquire your first Pokemon and continue on your adventure!\n");
 			}
 		},100)
 	}
