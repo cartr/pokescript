@@ -5,7 +5,7 @@ var hasSeenLoop = false;
 var hasChangedName = false;
 
 function log(s) {
-	document.getElementById('history').innerHTML += s+"\n";
+	document.getElementById('history').innerHTML += (s+"\n").replace(/</g,"&lt;").replace(/>/g,"&lt;");
 }
 
 function executeCommand() {
