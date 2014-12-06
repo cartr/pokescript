@@ -86,11 +86,11 @@ function executeCommand() {
 										clearInterval(endOfBattleTimer);
 										log("If we're going to keep walking around like this, we're going to need to define a few functions.  Functions are another "+
 										"way to save us time. (As you may have noticed, programmers don't really like typing things over and over.)  You can define a function "+
-										"like this: var walk = function(direction,distance) {for (var i=0; i<distance; i++) tapButton(direction)}\n");
-										log("The 'var walk =' part is just like the 'var i=' part we saw earlier; we're telling JavaScript to remember something. "+
+										"like this: walk = function(direction,distance) {for (var i=0; i<distance; i++) tapButton(direction)}\n");
+										log("The 'walk =' part is just like the 'var i=' part we saw earlier; we're telling JavaScript to remember something. "+
 										"The word 'function' tells JavaScript that what we type next is a function, and the '(direction, distance)' bit tells JavaScript "+
 										"the parameters of the function.  Parameters are things we can give a function to change what it does. In this case, we want to be "+
-										"able to specify the direction to walk in and the distance to walk. Finally, the bit inside the { } (which are called curly brace, by the way) "+
+										"able to specify the direction to walk in and the distance to walk. Finally, the bit inside the { } (which are called curly braces, by the way) "+
 									 	"is called the body of the function.  The body is the code that runs when we run the function.\n");
 										log("The end result is that after you define the function with that code, you'll be able just to type walk('left',4); and JavaScript "+
 									    "will do all the work for you.");
