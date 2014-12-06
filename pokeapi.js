@@ -41,6 +41,6 @@ function textOnScreen() { return (translateText(50361,18).trim()+"\n"+translateT
 
 var player = {}
 Object.defineProperty(player,"name", {
-	get: function() { return translateVarLenText(0xD158,7)}
+	get: function() { return translateVarLenText(0xD158,7)},
 	set: function(name) { setVarLenText(0xD158,7,name) }
 })
