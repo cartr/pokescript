@@ -37,7 +37,7 @@ body {
 #history {
 	width:100%;
 	max-height:calc(100% - 2em);
-	overflow:scroll;
+	overflow:auto;
 	padding:1em;
 	box-sizing:border-box;
 }
