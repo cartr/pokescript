@@ -62,7 +62,7 @@ function executeCommand() {
 		"to change your name to something else!");
 		hasSeenLoop = true;
 		document.getElementById("command").disabled = false;
-	} else if (tutorialEnabled && !hasChangedName && player.name != "AAAAAAA") {
+	} else if (tutorialEnabled && hasSeenLoop && !hasChangedName && player.name != "AAAAAAA") {
 		log("Great Job!\n");
 		if (player.name == "CARTER") {
 			log("(By the way, your name doesn't have to be CARTER.  You can type player.name='SUSAN'; or player.name='THEBEST'; if you want)\n");
