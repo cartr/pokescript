@@ -9,6 +9,7 @@ function log(s) {
 }
 
 function executeCommand() {
+	gameboy.memory[0xD355] = 0; // Set text speed to INSTANT
 	readPlayerPokemon();
 	readOpponentPokemon();
 	var cmd = document.getElementById('command').value;
