@@ -55,7 +55,7 @@ function executeCommand() {
 			"asked it to remember a number), and set that variable to 0.\n")
 		log("The next bit of the loop is called the condition.  The condition is what tells JavaScript how long to keep doing the loop.  'i<200' means 'if the number is less "
 		+"than 200, keep going'.  Then, the 'i = i + 1' (the afterthought) tells it to count the next number each time.  So (var i=0; i<200; i++) means 'count to 200'.\n");
-		log('Finally, the "tapButton('a')" is the thing that the computer does each time through the loop.  The computer counts to 200, and for each number it counts, it presses A!\n');
+		log('Finally, the "tapButton(\'a\')" is the thing that the computer does each time through the loop.  The computer counts to 200, and for each number it counts, it presses A!\n');
 		log("Let's take a look at how the A-presser is going... Well, maybe it wasn't the best idea to have the computer press A over and over.  I think it set our name to AAAAAAA! "+
 		"Normally in Pokemon games you aren't allowed to change your name after the game starts.  Thankfully, we're programmers, so we don't need to play by the rules!");
 		hasSeenLoop = true;
