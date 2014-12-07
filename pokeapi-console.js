@@ -16,7 +16,7 @@ function executeCommand() {
 	document.getElementById('command').value = "";
 	log("&gt; "+cmd);
 	if (["left","right","b","a","select","start","up","down"].indexOf(cmd.toLowerCase().trim()) !== -1) {
-		log("To press "+cmd.toLowerCase().trim()+", type tapButton('+"+cmd.toLowerCase().trim()+"')");
+		log("To press "+cmd.toLowerCase().trim()+", type tapButton('"+cmd.toLowerCase().trim()+"')");
 		return;
 	}
 	try {
@@ -32,8 +32,8 @@ function executeCommand() {
 		if (tutorialEnabled && !hasSeenError) {
 			hasSeenError = true;
 			log("\nIt looks like you got an error; the computer's trying to tell you that it doesn't understand what you're trying to tell it to do. "+
-			    "Usually, this means that you missed a piece of punctuation or spelled a word wrong.\n\nWhile they may seem annoying, error messages like"+
-				"this are actually a good thing! (Sometimes, when computer programmers make mistakes, the computer just does the wrong thing. Problems like"+
+			    "Usually, this means that you missed a piece of punctuation or spelled a word wrong.\n\nWhile they may seem annoying, error messages like "+
+				"this are actually a good thing! (Sometimes, when computer programmers make mistakes, the computer just does the wrong thing. Problems like "+
 				"that are usually a lot harder to track down and fix than error messages.)")
 		}
 	}
@@ -69,7 +69,7 @@ function executeCommand() {
 		hasSeenLoop = true;
 		document.getElementById("command").disabled = false;
 	} else if (tutorialEnabled && hasSeenLoop && !hasChangedName && player.name != "AAAAAAA") {
-		log("Great Job!\n");
+		log("Great job!\n");
 		if (player.name == "CARTER") {
 			log("(By the way, your name doesn't have to be CARTER.  You can type player.name='SUSAN'; or player.name='THEBEST'; if you want)\n");
 		}
