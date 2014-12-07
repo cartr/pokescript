@@ -79,7 +79,7 @@ function executeCommand() {
 		var escapeHouseTimer = setInterval(function() {
 			if (player.mapNumber == 0) {
 				clearInterval(escapeHouseTimer);
-				log("Congratulations!  You left your house!  Next, you can head north to acquire your first Pokemon and continue on your adventure!\n");
+				log("Congratulations!  You left your house!  Next, you can head north to acquire your first Pokemon and continue on your adventure!\n\n(You can take a Pokemon by facing its Poke-Ball and pressing A.)");
 				var getPokemonTimer = setInterval(function() {
 					if (player.pokemon.length > 0) {
 						clearInterval(getPokemonTimer);
@@ -101,7 +101,14 @@ function executeCommand() {
 										"able to specify the direction to walk in and the distance to walk. Finally, the bit inside the { } (which are called curly braces, by the way) "+
 									 	"is called the body of the function.  The body is the code that runs when we run the function.\n");
 										log("The end result is that after you define the function with that code, you'll be able just to type walk('left',4); and JavaScript "+
-									    "will do all the work for you.");
+									    "will do all the work for you.\n\nYour next step should probably be to head north to the next town.");
+										var endOfTourTimer = setInterval(function() {
+											if (player.mapNumber == 1) {
+												clearInterval(endOfTourTimer);
+												log("Having made it to Viridian City, you've reached the end of this little programming tutorial.\n");
+												document.getElementById('history').innerHTML += "If you want, you can check out <a href='https://github.com/cartr/pokeapi-js/wiki/Pok%C3%A9Script-Documentation'>the full documentation</a> or <a href='https://github.com/cartr/pokeapi-js/wiki/Things-to-Try'>a few more things to try</a>.";
+											}
+										},100)
 									}
 								},100)
 							}

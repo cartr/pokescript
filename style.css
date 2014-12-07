@@ -41,6 +41,10 @@ body {
 	white-space: -o-pre-wrap;
 	word-wrap: break-word;
 }
+#history a {
+	text-decoration:underline;
+	color:white;
+}
 #prompt {
 	background-color:#EFFFDE; line-height:2em; width:1em; float:left;
 	color:#183442; text-align:center;
