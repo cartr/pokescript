@@ -45,12 +45,12 @@ function executeCommand() {
 		var oakTimer = setInterval(function() {
 			if (textOnScreen().indexOf("Hello") > -1) {
 				clearInterval(oakTimer);
-				document.getElementById("command").value = "for (var i=0; i<100; i = i + 1) tapButton('a');";
+				document.getElementById("command").value = "for (var i=0; i<75; i = i + 1) tapButton('a');";
 				document.getElementById("command").disabled = true;
 				log("\nNormally, in this part of the game we'd have to press the A button over and over again and listen to Professor Oak ramble on about how the "+
 				"Pokemon world is filled with Pokemon and trainers and stuff, but we're programmers now!  We can make the A button press itself!");
-				log("\nI've typed in a little command that does exactly that.  Basically, I told the computer to count to 100 and press the A button "+
-					"every time it counts a new number, so it'll hit the A button a total of 100 times.")
+				log("\nI've typed in a little command that does exactly that.  Basically, I told the computer to count to 75 and press the A button "+
+					"every time it counts a new number, so it'll hit the A button a total of 75 times.")
 			}
 		},100)
 	}
@@ -60,9 +60,9 @@ function executeCommand() {
 			" to run a for-loop.  A for-loop is one of the easiest ways to do something over and over again.  The next bit of the for loop, 'var i=0', is called the "+
 			"initialization.  The initialization tells JavaScript how to get ready for the loop.  In this case, I've told it to create a VARiable (in other words, I've "+
 			"asked it to remember a number), and set that variable to 0.\n")
-		log("The next bit of the loop is called the condition.  The condition is what tells JavaScript how long to keep doing the loop.  'i<100' means 'if the number is less "
-		+"than 100, keep going'.  Then, the 'i = i + 1' (the afterthought) tells it to count the next number each time.  So (var i=0; i<100; i++) means 'count to 100'.\n");
-		log('Finally, the "tapButton(\'a\')" is the thing that the computer does each time through the loop.  The computer counts to 100, and for each number it counts, it presses A!\n');
+		log("The next bit of the loop is called the condition.  The condition is what tells JavaScript how long to keep doing the loop.  'i<75' means 'if the number is less "
+		+"than 75, keep going'.  Then, the 'i = i + 1' (the afterthought) tells it to count the next number each time.  So (var i=0; i<75; i++) means 'count to 75'.\n");
+		log('Finally, the "tapButton(\'a\')" is the thing that the computer does each time through the loop.  The computer counts to 75, and for each number it counts, it presses A!\n');
 		log("Let's take a look at how the A-presser is going... Well, maybe it wasn't the best idea to have the computer press A over and over.  I think it set our name to AAAAAAA! "+
 		"Normally in Pokemon games you aren't allowed to change your name after the game starts.  Thankfully, we're programmers, so we don't need to play by the rules!  Type player.name='CARTER'; "+
 		"to change your name to something else!");
