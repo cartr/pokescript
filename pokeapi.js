@@ -36,9 +36,13 @@ function tapButton(key,done) {
 	if (validButtons.indexOf(key) === -1) {
 		throw new ReferenceError("invalid button name");
 	}
-	keyQueue.push([GameBoyKeyDown,key]);
+	keyQueue.push([function(key) {
+		GameBoyKeyDown(key);
+		document.getElementById(key).className="touched";
+	},key]);
 	keyQueue.push([function(key) {
 		GameBoyKeyUp(key); 
+		document.getElementById(key).className = "";
 		if (done !== undefined)
 			done()
 	}, key]);

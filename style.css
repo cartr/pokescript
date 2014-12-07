@@ -5,6 +5,8 @@ html,body {width:100%; height:100%;}
 body {
 	background-color:#183442;
 	color:#EFFFDE; font-size:18px;
+	font-family:Lato;
+	font-weight:300;
 }
 #gameboy-column {
 	width:320px; height:100%;
@@ -16,8 +18,6 @@ body {
 	width:320px; height:288px;
 }
 #gameboy-column h1 {
-	font-family:Lato;
-	font-weight:300;
 	font-size:40px;
 	margin:0.2em;
 	text-align:center;
@@ -56,4 +56,66 @@ body {
 	float:right; width:5em;
 	text-align:center; line-height:2em;
 	cursor:default;
+}
+
+#buttons {
+	width:320px;
+	height:200px;
+	position:relative;
+}
+#a, #b {
+	width:50px; height:50px; border-radius:100%; border:1px solid red;
+	color:red; line-height:50px; text-align:center;
+}
+#a.touched, #b.touched {
+	background-color:red;
+}
+#a{
+	position:absolute;
+	right:10px; top:10px;
+}
+#b {
+	position:absolute;
+	right:70px; top:40px;
+}
+#start,#select {
+	border:1px solid #183442;
+	width:80px;
+	height:25px; line-height:25px;
+	text-align:center;
+	border-radius:12.5px;
+}
+#start.touched,#select.touched {
+	background-color:#183442;
+}
+#start{
+	position:absolute; bottom:10px; right:70px;
+}
+#select{
+	position:absolute; bottom:10px; left:70px;
+}
+#dpad {
+	width:90px; height:90px;
+	position:relative; left:20px; top:6px;
+}
+#dpad div {
+	border:1px solid #183442;
+	position:absolute;
+	box-sizing:border-box;
+	width:33.333333%; height:33.333333%;
+}
+#dpad div.touched {
+	background-color:#183442;
+}
+#up {
+	left:33.333333%; top:0; border-bottom:none !important;
+}
+#left {
+	left:0; top:33.333333%; border-right:none !important;
+}
+#down {
+	left:33.333333%; bottom:0; border-top:none !important;
+}
+#right {
+	right:0; top:33.333333%; border-left:none !important;
 }
