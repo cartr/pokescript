@@ -53,6 +53,13 @@ Object.defineProperty(player,"name", {
 	get: function() { return translateVarLenText(0xD158,7)},
 	set: function(name) { setVarLenText(0xD158,7,name) }
 });
+
+var rival = new Player();
+Object.defineProperty(rival,"name", {
+	get: function() { return translateVarLenText(0xD34A,7)},
+	set: function(name) { setVarLenText(0xD34A,7,name) }
+});
+
 Object.defineProperty(player,"x", {
 	get: function() { return gameboy.memory[0xD362]}
 });
