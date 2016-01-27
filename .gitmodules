@@ -6,4 +6,4 @@
 	url = https://github.com/bentley/rgbds
 [submodule "GameBoy-Online"]
 	path = GameBoy-Online
-	url = https://github.com/grantgalitz/GameBoy-Online
+	url = https://github.com/taisel/GameBoy-Online
